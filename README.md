@@ -38,6 +38,9 @@ Inside Floor Planning we have a variable FP_CORE_UTIL. Its by default set to 50%
 
 Now lets see how to set the switches inside FloorPlan. Let us try to see, what are the default values.
 ![VirtualBox_VSD_20_05_2025_12_48_03](https://github.com/user-attachments/assets/f236e00e-1e4d-4744-b3b7-bcd0ca5cb937)
+default parameters in the floorplan.tcl directory
+![VirtualBox_VSD_20_05_2025_22_55_48](https://github.com/user-attachments/assets/51022e92-fcbe-443d-bb60-5e5112e1c920)
+
 With the deafault settings, we will try to run the floorplan with the command run_floorplan
 ![VirtualBox_VSD_20_05_2025_12_55_43](https://github.com/user-attachments/assets/57240e44-e332-4aa0-97a0-2528727ca9a5)
 
@@ -48,12 +51,38 @@ seeing results of ioPLacer.log
 ![VirtualBox_VSD_20_05_2025_14_33_28](https://github.com/user-attachments/assets/75748d16-ea27-4dbf-ab8e-d1f7360d8255)
 inside config.tcl
 ![VirtualBox_VSD_20_05_2025_14_40_18](https://github.com/user-attachments/assets/030956d3-35b3-4b3c-8266-3b2402d19137)
+
 PDK specific config.tcl
 ![VirtualBox_VSD_20_05_2025_14_46_28](https://github.com/user-attachments/assets/4b7fe169-a36d-4cb2-8924-48b6ac649e0f)
+core utilization of sky130A_sky130_fd_sc_hd_config.tcl has been considered for current floorplan and overwritten system default config.tcl
+![VirtualBox_VSD_20_05_2025_23_18_17](https://github.com/user-attachments/assets/6ce6382b-baec-457f-af5b-81c143700f51)
+
+
 def file inside the results
 ![VirtualBox_VSD_20_05_2025_14_50_42](https://github.com/user-attachments/assets/df7a0a71-0475-4014-872f-066d2a276880)
 layout in the magic
-![VirtualBox_VSD_20_05_2025_15_32_56](https://github.com/user-attachments/assets/cbbd5fcf-4fe3-4b95-b43d-1b2af7ca0060)
+![VirtualBox_VSD_20_05_2025_23_39_36](https://github.com/user-attachments/assets/c4b19450-f050-4e75-a973-f5ecb408006b)
+vertical pins
+![VirtualBox_VSD_20_05_2025_23_44_04](https://github.com/user-attachments/assets/8dd95b31-f797-4133-b43f-88de8ea1d92b)
+tap cells are diagonically equidistant
+![VirtualBox_VSD_20_05_2025_23_46_58](https://github.com/user-attachments/assets/4aa5f2d5-8220-4eaa-96d7-45c0a0cef533)
+standard cells
+![VirtualBox_VSD_20_05_2025_23_52_40](https://github.com/user-attachments/assets/606632c6-acbd-4c0e-abf5-9884ae4ff0cd)
+
+# Placement using run_placement
+here global placement is done with the motive to reduce wire length
+![VirtualBox_VSD_21_05_2025_00_03_25](https://github.com/user-attachments/assets/ec7e5a74-55b4-4bf7-91ff-a20dd1927dce)
+design in magic after placement is done.
+![VirtualBox_VSD_21_05_2025_00_03_25](https://github.com/user-attachments/assets/2dc12a75-82fb-4c00-9dec-708a35c7cbf1)
+placement ensures that standard cells are correctly placed.  
+![VirtualBox_VSD_21_05_2025_00_11_10](https://github.com/user-attachments/assets/819d3f32-0ffa-4b3b-b6b0-f4ff7ae46408)
+We can also do the changes in the run time. For example, we can set the distance between I/O pins as 2 and run the floor plan again.
+
+
+
+
+
+
 
 
 
