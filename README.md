@@ -1,6 +1,6 @@
 # Digital_VLSI_SoC_VSD_Nasscom
 Exploring OpenLane
-# Day:OpenLane Directory Structure
+# Day1:OpenLane Directory Structure
 # Exploring PDKs (Process Design Kits)
 PDKs contain LEF & DEF files. open_pdk makes foundary level PDKs to be compatible with open source EDA tools. sky130A is one such PDK. Its a variant.
 ![VirtualBox_VSD_18_05_2025_13_19_18](https://github.com/user-attachments/assets/392d5c8f-6b2f-4245-a609-ba7a9cc07d52)
@@ -32,6 +32,36 @@ now let us see LEF information. it consists of all design connect details
 # running systhesis
 This will run Yosys synthesis as well as abc
 ![VirtualBox_VSD_18_05_2025_17_27_46](https://github.com/user-attachments/assets/2835597f-2815-4d63-83b7-a8c7883dbab0)
+# FloorPlanning
+Before Running Floor Planning we need to do few changes inside switches. These switches can be found inside configuration directory of openlane. We can set the variable inside the synthesis flow. These variable are nothing but switches.
+Inside Floor Planning we have a variable FP_CORE_UTIL. Its by default set to 50%. Similary we have another variable for aspect ratio, which sets height and width of the core. by deafult its set to 1. There are other variables also available in floor plan, which can be set according to design requirements. We also have few variable inside Placemen, Clock Tree Synthesis etc.
+
+Now lets see how to set the switches inside FloorPlan. Let us try to see, what are the default values.
+![VirtualBox_VSD_20_05_2025_12_48_03](https://github.com/user-attachments/assets/f236e00e-1e4d-4744-b3b7-bcd0ca5cb937)
+With the deafault settings, we will try to run the floorplan with the command run_floorplan
+![VirtualBox_VSD_20_05_2025_12_55_43](https://github.com/user-attachments/assets/57240e44-e332-4aa0-97a0-2528727ca9a5)
+
+# Reviewing Floorplan Files and Seeing the Floor Plan
+lets go inside the runs directory in the picorv32a design to see and analyze the results.
+![VirtualBox_VSD_20_05_2025_13_06_42](https://github.com/user-attachments/assets/db68c9f4-f6fc-4302-8b24-d0c3ab41f1c9)
+seeing results of ioPLacer.log
+![VirtualBox_VSD_20_05_2025_14_33_28](https://github.com/user-attachments/assets/75748d16-ea27-4dbf-ab8e-d1f7360d8255)
+inside config.tcl
+![VirtualBox_VSD_20_05_2025_14_40_18](https://github.com/user-attachments/assets/030956d3-35b3-4b3c-8266-3b2402d19137)
+PDK specific config.tcl
+![VirtualBox_VSD_20_05_2025_14_46_28](https://github.com/user-attachments/assets/4b7fe169-a36d-4cb2-8924-48b6ac649e0f)
+def file inside the results
+![VirtualBox_VSD_20_05_2025_14_50_42](https://github.com/user-attachments/assets/df7a0a71-0475-4014-872f-066d2a276880)
+layout in the magic
+![VirtualBox_VSD_20_05_2025_15_32_56](https://github.com/user-attachments/assets/cbbd5fcf-4fe3-4b95-b43d-1b2af7ca0060)
+
+
+
+
+
+
+
+
 
 
 
